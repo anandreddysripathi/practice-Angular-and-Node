@@ -1,0 +1,21 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+  <div class="container">
+    <div class="col-md-6">
+    <div id="logbox">
+      <form id="signup" method="post" action="/signup">
+        <h1>create an account</h1>
+        <input name="user[name]" type="text" placeholder="What's your username?" [(ngModel)]='username' autofocus="autofocus" required="required" class="input pass"/>
+        <input name="user[password]" type="password" placeholder="Choose a password"  [(ngModel)]='password1' required="required" class="input pass"/>
+        <input name="user[password2]" type="password" placeholder="Confirm password" [(ngModel)]='password2'  required="required" class="input pass"/>
+      
+        <input type="submit" value="Sign me up!" (click)='signup()' class="inputButton"/>
+        <div class="text-center">
+            already have an account? <button class="btn btn-primary" (click)='login()'>login</button>
+        </div>
+      </form>
+    </div>
+   </div>

@@ -1,0 +1,48 @@
+<!-- <app-header></app-header><br> -->
+<!-- using nested router outlets for the dashboard page -->
+<span class="glyphicon glyphicon-refresh glyphicon-spin spinner" *ngIf="loading"></span>
+<span>
+<button class="btn btn-warning" (click)="checkout()" id="proceed" [disabled]="!cart.length>0">proceed to checkout</button>&nbsp;
+<button class="btn btn-danger" (click)="logout()">Logout</button></span>
+<br><br>
+
+
+<div class="card-columns">
+<div class="card" style="width:400px" *ngFor="let items of foodItems">
+    <img class="card-img-top" src='{{items.image}}' alt="Card image" height='300' width='100'>
+    <div class="card-body">
+      <h4 class="card-title">{{items.itemName}}</h4>
+      Price:<p class="card-text">{{items.price}}</p>
+      Rating:<p class="card-text">{{items.rating}}</p>
+      <button class="btn btn-primary" (click)='addToCart(items)'>add to cart</button>
+      <div *ngIf="selectedItems[items.itemName]"> 
+          <i class="far fa-thumbs-up"></i>
+      </div>
+    </div>
+  </div>&nbsp;
+</div>
+  
+
+
+  <!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Image link</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let items of foodItems'>
+        <th >prefer not to show </th>
+        <td>{{items.itemName}}</td>
+        <td>{{items.price}}</td>
+        <td>{{items.rating}}</td>
+        <button class="btn btn-primary" (click)='addToCart(items)'>add to cart</button>
+      <div *ngIf="selectedItems[items.itemName]"> 
+          <i class="far fa-thumbs-up"></i>
+      </div>
+      </tr>
+    </tbody>    
+  </table>  -->

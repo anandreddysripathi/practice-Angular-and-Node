@@ -1,0 +1,29 @@
+<h1>login here</h1>
+<div class="form-group">  
+    <label for="usr">Name:</label>
+    <input type="text" class="form-control" id="usr" placeholder="username" [(ngModel)]="username">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="password" [(ngModel)]="password">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="validateUser()">Login</button>
+  </div>
+  <div >
+    <button class="btn btn-warning" (click)='SignUp()'>SignUp</button>
+    </div><br><br>
+
+    List of valid users are:<br>
+     <table class="table table-striped" align='center'>
+    <thead>
+      <tr>
+        <th scope="col">UserName</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let users of allUsers'>
+        <td>{{users.username}}</td>
+      </tr>
+    </tbody>    
+  </table>  
